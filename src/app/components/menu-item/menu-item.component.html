@@ -3,7 +3,7 @@
     class="nav-link"
     [ngClass]="{active: isMainActive || isOneOfChildrenActive}"
 >
-    <i class="nav-icon fas fa-tachometer-alt"></i>
+    <i class="nav-icon {{ menuItem.icon }}"></i>
     <p>{{ menuItem.name }}</p>
     <i
         *ngIf="isExpandable && menuItem.children.length > 0"
@@ -17,7 +17,7 @@
             [routerLinkActive]="'active'"
             class="nav-link"
         >
-            <i class="far fa-circle nav-icon"></i>
+            <i class="{{ item.icon }} nav-icon"></i>
             <p>{{ item.name }}</p>
         </a>
     </li>

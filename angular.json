@@ -22,9 +22,21 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.scss"],
-                        "scripts": [],
+                        "assets": [
+                            {
+                                "glob": "**/*",
+                                "input": "./node_modules/leaflet/dist/images",
+                                "output": "leaflet/"
+                            },
+                            "src/favicon.ico", 
+                            "src/assets"],
+                        "styles": [
+                            "./node_modules/leaflet/dist/leaflet.css",
+                            "./node_modules/leaflet-draw/dist/leaflet.draw.css",
+                            "src/styles.scss"],
+                        "scripts": [
+                            
+                        ],
                         "vendorChunk": true,
                         "extractLicenses": false,
                         "buildOptimizer": false,
@@ -93,7 +105,10 @@
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
                         "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.scss"],
+                        "styles": [
+                            "./node_modules/leaflet/dist/leaflet.css",
+                            "./node_modules/leaflet-draw/dist/leaflet.draw.css",
+                            "src/styles.scss"],
                         "scripts": []
                     }
                 },

@@ -32,6 +32,24 @@ import {SubMenuComponent} from './pages/main-menu/sub-menu/sub-menu.component';
 import {MenuItemComponent} from './components/menu-item/menu-item.component';
 import {DropdownComponent} from './components/dropdown/dropdown.component';
 import {DropdownMenuComponent} from './components/dropdown/dropdown-menu/dropdown-menu.component';
+import { DesignComponent } from './pages/design/design.component';
+
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import { CalendarComponent } from './pages/calendar/calendar.component'; // a plugin!
+
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletDrawModule } from '@asymmetrik/ngx-leaflet-draw';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+    dayGridPlugin,
+    interactionPlugin,
+    timeGridPlugin,
+    listPlugin
+]);
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -59,7 +77,10 @@ registerLocaleData(localeEn, 'en-EN');
         SubMenuComponent,
         MenuItemComponent,
         DropdownComponent,
-        DropdownMenuComponent
+        DropdownMenuComponent,
+        DesignComponent,
+        CalendarComponent,
+        
     ],
     imports: [
         BrowserModule,
@@ -67,10 +88,14 @@ registerLocaleData(localeEn, 'en-EN');
         AppRoutingModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+        FullCalendarModule, 
+        LeafletModule, // Don't forget to include leaflet here,
+        LeafletDrawModule,
         ToastrModule.forRoot({
             timeOut: 3000,
             positionClass: 'toast-top-right',
-            preventDuplicates: true
+            preventDuplicates: true,
+            progressBar: true,
         })
     ],
     providers: [],
