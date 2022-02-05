@@ -1,0 +1,140 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+      <div class="row mb-2">
+          <div class="col-sm-6">
+              <h1>Mapas</h1>
+          </div>
+          <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Blank Page</li>
+              </ol>
+          </div>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="design#home">Mapa</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="design#menu1">Calculos Eletricos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="design#menu2">Calculos Financieros</a>
+            </li>
+        </ul>
+
+
+      </div>
+      
+  </div>
+  <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <!-- Default box -->
+  <div class="container-fluid">
+           <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="home" class="container-fluid tab-pane active">
+            <form class="form-inline">
+                <input type="hidden" value="<?=base_url()?>" id="baseUrl">
+                    <div class="col-2">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Panel</label>
+                            </div>
+                            <select id="paneles">
+                            </select>
+                        </div>
+                    </div>    
+
+                    <div class="col-1">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">cel.</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="mts" id="esp_cel" value="0.05">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">fila.</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="mts" id="esp_fila" value="0.5">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">tils</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Angulo de tils" id="til" value="0.0">
+                        </div>
+                    </div>
+
+                    <div class="col-1">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">azim.</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Ang." id="azimut" value="0.0">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">%.</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Ang." id="lindero" value="1.0">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">orient.</label>
+                            </div>
+                            <select class="custom-select" id="orientation">
+                                <option selected value="horizontal">Horizontal</option>
+                                <option value="vertical">Vertical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-2 align-right">
+                        <button type="submit" class="btn btn-primary px-2">Salvar</button>
+                    </div>
+            </form>
+
+            <div class="col-12">  
+                <div  class="map"style="height: 600px;"
+                    leaflet
+                    leafletDraw
+                    [leafletOptions]="options"
+                    [leafletDrawOptions]="drawOptions"
+                    [leafletLayersControl]="layersControl"
+                    (leafletDrawCreated)="onDrawCreated($event)">
+                    
+                    <div [leafletLayer]="drawItems">
+
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div id="menu1" class="container tab-pane fade"><br>
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+        <h3>Menu 2</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    </div>          
+  </div>
+</section>
+
+
+
+ 

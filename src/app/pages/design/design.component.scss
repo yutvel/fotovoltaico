@@ -1,0 +1,24 @@
+.map-frame {
+    border: 2px solid rgba(238, 236, 236, 0.829);
+    height: 100%;
+}
+
+.leaflet-div-icon {
+	background: #fff;
+	border: 1px solid #666;
+    border-radius: 50%;
+    width: 16px !important;
+    height:16px !important;
+    margin-left: -8px !important;
+    margin-top: -8px !important;
+}
+
+leaflet-vertex-icon {
+	background: #aaa;
+	border: 1px solid #666;
+    border-radius: 50%;
+    width: 8px !important;
+    height:8px !important;
+    margin-left: -4px !important;
+    margin-top: -4px !important;
+}
